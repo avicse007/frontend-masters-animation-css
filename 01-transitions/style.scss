@@ -37,6 +37,9 @@ body {
   border: 2px solid var(--color);
   border-radius: 0.25rem;
   outline: none;
+  border-color: var(--color);
+// transition: property delay duration timing-function;
+  transition: all 0.3s 0.3s ease-in-out;
 }
 
 .ui-button {
@@ -48,6 +51,8 @@ body {
   border-radius: 0.25rem;
   height: var(--input-height);
   background-color: var(--color);
+  border-color: var(--color); 
+  transition: all 0.3s 0.3s ease-in-out;
 }
 
 [data-show]:not([data-active]) {
