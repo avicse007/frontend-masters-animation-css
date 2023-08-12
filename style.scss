@@ -47,15 +47,10 @@ ul {
   //animation-direction: alternate;
 //  animation-direction: alternate-reverse;
   // animation choreography 
-  --duration :0.5s;
-  animation: move-right var(--duration) both;
-  &:nth-child(5) {
-    animation-delay: calc(var(--duration) * 0.3);
-  }
-  
-  &:nth-child(6) {
-    animation-delay: calc(var(--duration) * 2* 0.3);
-  }
+  --duration :1s;
+  --stagger : 0.5s;
+  --interval : calc(var(--duration) - var(--stagger));
+  animation: move-right var(--duration) calc(var(--interval)* var(--i,2)) both;
   // &:hover {
   //   // transition-delay: 0.5s;
   //   // transition-duration: 1s,              15s;
