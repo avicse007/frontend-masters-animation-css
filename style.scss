@@ -1,5 +1,10 @@
 @import './styles/base.scss';
 
+:root {
+  --duration: 3s;
+  --easing : cubic-bezier(0.5, 0, 0.5, 1);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 5vmin;
@@ -27,5 +32,28 @@ ul {
   height: 5vmin;
   width: 5vmin;
   border-radius: 50%;
-  background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
+  //background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
+  //animation: slide-right var(--duration) var(--easing) infinite;
+  background-color: aqua;
+  // transition-property: background-color transform opacity;
+  // transition-duration: 0.1s;
+  transition: all 2s 0.5s ease-in-out;
+
+  &:hover {
+    // transition-delay: 0.5s;
+    // transition-duration: 1s,              15s;
+    // transition-timing-function: linear, ease-in-out;
+    background-color: blue;
+    transform: scale(22);
+    opacity: 0.1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50vw);
+  }
 }
