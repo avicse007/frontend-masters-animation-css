@@ -28,7 +28,9 @@ body {
   grid-template-areas: 'input button';
 
   // Add an animation here
-
+  animation: slide-up;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
   --color: var(--color-gray);
   &:focus-within {
     --color: var(--color-blue);
@@ -37,6 +39,11 @@ body {
   > .ui-input,
   > .ui-button {
     // Add an animation here
+     animation: slide-up;
+     animation-duration: 0.3s;
+     animation-timing-function: linear;
+     animation-iteration-count: 3;
+    
   }
 }
 
@@ -48,6 +55,12 @@ body {
   border-radius: 0.25rem;
   outline: none;
   transition: inherit;
+
+  &:invalid:not(:focus) {
+    animation: shake;
+    animation-duration: 1s;
+    border-color: red;
+  }
 }
 
 .ui-button {
@@ -71,9 +84,24 @@ body {
 }
 
 @keyframes slide-up {
-  // Add keyframes here
+  to {
+    opacity: 1;
+    transform: none;
+  }
+  from {
+    opacity: 0;
+    transform: translateY(100%);;
+  }
 }
 
 @keyframes shake {
-  // Add a shake animation here
+  from,to {
+    transform: none;
+  }
+  20%,40%,60%,80% {
+    transform: translateX(10%);
+  }
+  10%,30%,50%,90% {
+    transform: translateX(-10%);
+  }
 }

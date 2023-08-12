@@ -38,23 +38,39 @@ ul {
   // transition-property: background-color transform opacity;
   // transition-duration: 0.1s;
   //transition: all 2s 0.5s ease-in-out;
-  animation: move-like-square;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-
-  &:hover {
-    // transition-delay: 0.5s;
-    // transition-duration: 1s,              15s;
-    // transition-timing-function: linear, ease-in-out;
-    // background-color: blue;
-    // transform: scale(22);
-    // opacity: 0.1;
+  //move-like-square, red-green;
+  //  animation-duration: 4s;
+  //animation-fill-mode: forwards;
+  //animation-fill-mode: backwards;
+  //animation-fill-mode: both;
+  //animation-iteration-count: infinite;
+  //animation-direction: alternate;
+//  animation-direction: alternate-reverse;
+  // animation choreography 
+  animation: move-right 0.50s both;
+  &:nth-child(5) {
+    animation-delay: 0.75s;
   }
+  
+  &:nth-child(6) {
+    animation-delay: 0.95s;
+  }
+  // &:hover {
+  //   // transition-delay: 0.5s;
+  //   // transition-duration: 1s,              15s;
+  //   // transition-timing-function: linear, ease-in-out;
+  //   // background-color: blue;
+  //   // transform: scale(22);
+  //   opacity: 0.1;
+  // }
+
 }
 
+
+
 @keyframes move-like-square {
-  0% {
-    transform: translateX(0);
+  0%, 100% {
+    transform: none
   }
   25% {
     transform: translateX(50vw);
@@ -65,8 +81,24 @@ ul {
   75% {
     transform: translateX(0) translateY(50vh);
   }
+}
+
+@keyframes red-green {
+  0% {
+    background-color: red
+  }
+  25% {
+    background-color: rgb(232, 160, 160);
+  }
+  50% {
+    background-color: rgb(161, 187, 158);
+  }
+  75% {
+    transform:  rgb(82, 140, 75);
+  }
+
   100% {
-    transform: translateX(0);
+    transform:  rgb(29, 245, 5);
   }
 }
 
@@ -78,3 +110,13 @@ ul {
 //     transform: translateX(50vw);
 //   }
 // }
+
+@keyframes move-right {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(80vw);
+  }
+  
+}
