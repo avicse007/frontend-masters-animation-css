@@ -33,19 +33,30 @@ body {
   &:focus-within {
     --color: var(--color-blue);
   }
-
-  animation: slide-up var(--animation-duration) var(--transition-easing);
+  --stagger : 0.5s;
+  --interval : calc(var(--duration) - var(--stagger));
+  --animation-index: 5;
+  animation: slide-up var(--animation-duration) var(calc(var(--interval) * var(--animation-index))) var(--transition-easing);
+  --input-duration: calc(var(--animation-duration) / 2);
 
   > .ui-input,
   > .ui-button {
-    // Add animations here
+    animation: slide-up; 
+    animation-duration: var(--animation-duration);
+    animation-fill-mode: both;
+
+    
   }
 
   > .ui-input {
-    // ...
+    //--animation-duration: 2.8s;
+    animation-delay: var(--animation-duration);
+    animation-duration: var(--input-duration);
+
   }
   > .ui-button {
-    // ...
+    //--animation-duration: 3.8s;
+    animation-delay: calc(var(--animation-duration) + var(--input-duration));
   }
 }
 

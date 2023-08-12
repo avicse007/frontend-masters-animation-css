@@ -50,7 +50,7 @@ ul {
   --duration :1s;
   --stagger : 0.5s;
   --interval : calc(var(--duration) - var(--stagger));
-  animation: move-right var(--duration) calc(var(--interval)* var(--i,2)) both;
+  animation: move-right var(--duration) calc(var(--interval)* var(--i)) both;
   // &:hover {
   //   // transition-delay: 0.5s;
   //   // transition-duration: 1s,              15s;
